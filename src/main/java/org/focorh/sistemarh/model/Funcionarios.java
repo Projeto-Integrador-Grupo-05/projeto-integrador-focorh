@@ -1,11 +1,8 @@
 package org.focorh.sistemarh.model;
 
 import java.time.LocalDateTime;
-
 import org.hibernate.annotations.UpdateTimestamp;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,7 +10,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "tb_funcionarios")
@@ -23,7 +19,6 @@ public class Funcionarios {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotNull
 	@NotBlank
 	private String nome;
 	
@@ -38,14 +33,12 @@ public class Funcionarios {
 	@UpdateTimestamp
 	private LocalDateTime data_admissao;
 	
+	@UpdateTimestamp
 	private LocalDateTime data_demissao;
 	
-	@NotNull
 	@NotBlank
 	private String tipo_contrato;
 	
-	
-
 	public Long getId() {
 		return id;
 	}

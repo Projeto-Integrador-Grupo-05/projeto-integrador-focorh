@@ -9,7 +9,5 @@ import org.springframework.data.repository.query.Param;
 
 public interface DepartamentoRepository extends JpaRepository<Departamento, Long>{
 
-	   public List<Departamento> findAllByNomeContainingIgnoreCase(@Param("nome") String nome);
-
-	
+	   public List<Departamento> findAllByNomeContainingIgnoreCase(@Param("nome") String nome);	
 }

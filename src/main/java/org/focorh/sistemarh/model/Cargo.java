@@ -1,6 +1,7 @@
 package org.focorh.sistemarh.model;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -32,9 +33,9 @@ public class Cargo {
 	
 	private String descricao;
 	
-	@OneToMany(mappedBy = "departamento", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties("departamento")
-	private Funcionarios funcionario;
+	@OneToMany(mappedBy = "cargo", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties("cargo")
+	private List<Funcionarios> funcionarios;
 	
 	private String nivel;
 
@@ -83,14 +84,14 @@ public class Cargo {
 		this.salario_base = salario_base;
 	}
 
-	public Funcionarios getFuncionario() {
-		return funcionario;
+	public List<Funcionarios> getFuncionarios() {
+		return funcionarios;
 	}
 
-	public void setFuncionario(Funcionarios funcionario) {
-		this.funcionario = funcionario;
-	}	
-	
-	
+	public void setFuncionarios(List<Funcionarios> funcionarios) {
+		this.funcionarios = funcionarios;
+	}
+
+		
 
 }

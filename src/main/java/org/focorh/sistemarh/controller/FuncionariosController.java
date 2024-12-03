@@ -41,15 +41,6 @@ public class FuncionariosController {
 				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
 	}
 
-	@GetMapping("/cargo/{cargo}")
-	public ResponseEntity<List<Funcionarios>> getByCargo(@PathVariable String cargo) {
-		return ResponseEntity.ok(funcionariosRepository.findAllByCargoContainingIgnoreCase(cargo));
-	}
-
-	@GetMapping("/departamento/{departamento}")
-	public ResponseEntity<List<Funcionarios>> getByDepartamento(@PathVariable String departamento) {
-		return ResponseEntity.ok(funcionariosRepository.findAllByDepartamentoContainingIgnoreCase(departamento));
-	}
 
 	@PostMapping
 	public ResponseEntity <Funcionarios> post(@Valid @RequestBody Funcionarios funcionarios){
