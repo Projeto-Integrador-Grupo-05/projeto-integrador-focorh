@@ -8,6 +8,8 @@ public class SistemarhApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SistemarhApplication.class, args);
+		
+		
 	}
 
 }
