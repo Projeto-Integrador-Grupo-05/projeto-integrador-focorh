@@ -55,7 +55,14 @@ public class Departamento {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
+
+	public List<Funcionarios> getFuncionarios() {
+		return funcionarios;
+	}
+
+	public void setFuncionarios(List<Funcionarios> funcionarios) {
+		this.funcionarios = funcionarios;
+	}
 	
 	
 }

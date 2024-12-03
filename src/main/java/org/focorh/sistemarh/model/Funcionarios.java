@@ -86,4 +86,12 @@ public class Funcionarios {
 		this.tipo_contrato = tipo_contrato;
 	}
 
+	public Cargo getCargo() {
+		return cargo;
+	}
+
+	public void setCargo(Cargo cargo) {
+		this.cargo = cargo;
+	}
+
 }
