@@ -91,7 +91,5 @@ public class Cargo {
 	public void setFuncionarios(List<Funcionarios> funcionarios) {
 		this.funcionarios = funcionarios;
 	}
-
-		
-
+	
 }

@@ -2,7 +2,6 @@ package org.focorh.sistemarh.controller;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.focorh.sistemarh.model.Cargo;
 import org.focorh.sistemarh.repository.CargoRepository;
 import org.springframework.beans.factory.annotation.Autowired;

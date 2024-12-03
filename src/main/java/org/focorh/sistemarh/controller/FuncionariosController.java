@@ -2,7 +2,6 @@ package org.focorh.sistemarh.controller;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.focorh.sistemarh.model.Funcionarios;
 import org.focorh.sistemarh.repository.FuncionariosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
-
 import jakarta.validation.Valid;
 
 @RestController
@@ -40,7 +38,6 @@ public class FuncionariosController {
 		return funcionariosRepository.findById(id).map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
 	}
-
 
 	@PostMapping
 	public ResponseEntity <Funcionarios> post(@Valid @RequestBody Funcionarios funcionarios){

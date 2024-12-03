@@ -33,7 +33,6 @@ public class Funcionarios {
 	@UpdateTimestamp
 	private LocalDateTime data_admissao;
 	
-	@UpdateTimestamp
 	private LocalDateTime data_demissao;
 	
 	@NotBlank
