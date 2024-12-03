@@ -1,5 +1,7 @@
 package org.focorh.sistemarh.model;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.CascadeType;
@@ -28,9 +30,9 @@ public class Departamento {
 	@Size(min = 2, max = 15)
 	private String nome;
 	
-	//@OneToMany(mappedBy = "departamento", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
-	//@JsonIgnoreProperties("departamento")
-	//private List<Funcionario> funcionarios;
+	@OneToMany(mappedBy = "departamento", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties("departamento")
+	private List<Funcionarios> funcionarios;
 	private String descricao;
 
 	public Long getId() {

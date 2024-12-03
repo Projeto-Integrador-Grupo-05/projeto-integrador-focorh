@@ -4,10 +4,13 @@ import java.time.LocalDateTime;
 
 import org.hibernate.annotations.UpdateTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -24,13 +27,13 @@ public class Funcionarios {
 	@NotBlank
 	private String nome;
 	
-	@NotNull
-	@NotBlank
-	private String cargo;
+	@ManyToOne
+    @JsonIgnoreProperties("funcionarios")
+	private Cargo cargo;
 	
-	@NotNull
-	@NotBlank
-	private String departamento;
+	@ManyToOne
+    @JsonIgnoreProperties("funcionarios")
+	private Departamento departamento;
 	
 	@UpdateTimestamp
 	private LocalDateTime data_admissao;
@@ -59,19 +62,11 @@ public class Funcionarios {
 		this.nome = nome;
 	}
 
-	public String getCargo() {
-		return cargo;
-	}
-
-	public void setCargo(String cargo) {
-		this.cargo = cargo;
-	}
-
-	public String getDepartamento() {
+	public Departamento getDepartamento() {
 		return departamento;
 	}
 
-	public void setDepartamento(String departamento) {
+	public void setDepartamento(Departamento departamento) {
 		this.departamento = departamento;
 	}
 
